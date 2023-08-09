@@ -1,0 +1,31 @@
+"""CRM_App URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from app.views import *
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('Home/', Home, name='Home'), 
+    path('Register/', Register, name='Register'), 
+    path('Logout_user/', Logout_user, name='Logout_user'),
+    path('add_record/', add_record, name='add_record'), 
+
+
+
+    path('Customer_record/<int:pk>/', Customer_record, name='Customer_record'), # Capturing Data <int:pk>
+    path('delete_record/<int:pk>', delete_record, name='delete_record'), 
+    path('update_record/<int:pk>/', update_record, name='update_record'), 
+]

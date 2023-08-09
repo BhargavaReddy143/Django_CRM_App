@@ -1,0 +1,48 @@
+{% extends 'Dummy.html' %}
+    {% block title %}
+    <title>customer_record</title>
+    {% endblock %}
+
+{% block body_block %}    
+<body>
+    <div class="card">
+        <div class="card-header">
+            {{ Records.first_name }} {{ Records.last_name}}
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <strong>Email: </strong>{{ Records.email }}
+            </p>
+            <p class="card-text">    
+                <strong>Phone: </strong>{{ Records.phone }}
+            </p>
+            <p class="card-text">
+                <strong>Address: </strong>{{ Records.address }}
+            </p>
+            <p class="card-text">
+                <strong>City: </strong>{{ Records.city }}
+            </p>
+            <p class="card-text">    
+                <strong>State: </strong>{{ Records.state }}
+            </p>
+            <p class="card-text">
+                <strong>ZipCode: </strong>{{ Records.zipcode }}
+            </p>
+            <p class="card-text">     
+                <strong>Created_At: </strong>{{ Records.created_at }}
+            </p>
+            <p class="card-text">    
+                <strong>ID: </strong>{{ Records.id }}
+            </p>
+        
+        </div>
+    </div> 
+    <br>
+    <a class="btn btn-secondary" href="{% url 'Home' %}" role="button">Back</a>  
+
+    <a class="btn btn-danger" href="{% url 'delete_record' Records.id %}" role="button">Delete</a>
+    <a href="{% url 'update_record' Records.id %}" role="button" class="btn btn-info">Update Record</a>
+            
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,21 @@
+{% extends 'Dummy.html' %}
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+
+
+{% block body_block %}
+    <div class="col-md-6 offset-md-3">
+        <h1>Update Record..</h1>
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+
+            <button type="submit" class="btn btn-success">Update Record</button>
+        </form>    
+    </div>
+
+{% endblock %}
